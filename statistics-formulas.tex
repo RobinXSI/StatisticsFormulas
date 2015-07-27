@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage[margin=0.5in]{geometry}
+\title{Statistic Formulas}
+\author{Robin Bader}
+\date{Juli 2015}
+\begin{document}
+   \maketitle
+
+	\begin{table}[]
+	\centering
+	\caption{Elementary Descriptives}
+	\label{my-label}
+	\begin{tabular}{@{}lllll@{}}
+	\cmidrule(r){1-4}
+	Name & Population Symbol & Sample Symbol & Sample Calculation & Beschreibung \\ \cmidrule(r){1-4}
+	Mean &  & $\bar{x}$ & $\bar{x} = \frac{\sum{x}}{N}$ & Durchschnitt aller Daten \\
+	Variance & $\sigma_x^2$ & $s_x^2$ & $s_x^2 = \frac{\sum{(x - \bar{x})^2}}{N - 1}$ & Abweichung \\
+	Standard Dev & $\sigma_x$ & $s_x$ & $s_x = \sqrt{s_x^2}$ &  \\
+	Covariance & $\sigma_xy$ & $s_xy$ & $s_xy = \frac{\sum{(x - \bar{x})(y - \bar{y})}}{N - 1}$ &  \\
+	Correlation & $\rho_xy$ & $r_xy$ & \begin{tabular}[c]{@{}l@{}}$r_xy = \frac{s_xy}{s_x s_y}$\\ $r_xy = \frac{\sum{(z_x z_y)}}{N - 1}$\end{tabular} &  \\ \cmidrule(r){1-4}
+	z-score & $z_x$ & $z_x$ & $z_x = \frac{x-\bar{x}}{s_x}; \bar{z} = 0; s_x^2 = 1$ & 
+	\end{tabular}
+	\end{table}
+
+
+   \section{Hallo}
+   asdfasdf
+   \subsection{T-Test}
+
+   \[
+   t = \frac{\bar{x_D} - 0}{s_D / \sqrt{n}}
+   \]
+
+\end{document}
