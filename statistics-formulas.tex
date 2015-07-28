@@ -1,36 +1,93 @@
-\documentclass{article}
+\documentclass[landscape]{article}
+
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage[margin=0.5in]{geometry}
+\usepackage{pgfplots}
+
 \title{Statistic Formulas}
 \author{Robin Bader}
 \date{Juli 2015}
 \begin{document}
    \maketitle
-
-	\begin{table}[]
-	\centering
-	\caption{Elementary Descriptives}
-	\label{my-label}
-	\begin{tabular}{@{}lllll@{}}
-	\cmidrule(r){1-4}
-	Name & Population Symbol & Sample Symbol & Sample Calculation & Beschreibung \\ \cmidrule(r){1-4}
-	Mean &  & $\bar{x}$ & $\bar{x} = \frac{\sum{x}}{N}$ & Durchschnitt aller Daten \\
-	Variance & $\sigma_x^2$ & $s_x^2$ & $s_x^2 = \frac{\sum{(x - \bar{x})^2}}{N - 1}$ & Abweichung \\
-	Standard Dev & $\sigma_x$ & $s_x$ & $s_x = \sqrt{s_x^2}$ &  \\
-	Covariance & $\sigma_xy$ & $s_xy$ & $s_xy = \frac{\sum{(x - \bar{x})(y - \bar{y})}}{N - 1}$ &  \\
-	Correlation & $\rho_xy$ & $r_xy$ & \begin{tabular}[c]{@{}l@{}}$r_xy = \frac{s_xy}{s_x s_y}$\\ $r_xy = \frac{\sum{(z_x z_y)}}{N - 1}$\end{tabular} &  \\ \cmidrule(r){1-4}
-	z-score & $z_x$ & $z_x$ & $z_x = \frac{x-\bar{x}}{s_x}; \bar{z} = 0; s_x^2 = 1$ & 
-	\end{tabular}
-	\end{table}
+   	\section{Introduction}
 
 
-   \section{Hallo}
-   asdfasdf
-   \subsection{T-Test}
+	\section{Statistical Formulas}
+		\pgfmathdeclarefunction{gauss}{2}{%
+		  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+		}
 
-   \[
-   t = \frac{\bar{x_D} - 0}{s_D / \sqrt{n}}
-   \]
+		\begin{tikzpicture}
+			\begin{axis}[
+			  no markers, domain=0:10, samples=100,
+			  axis lines*=left, xlabel=$x$, ylabel=$y$,
+			  every axis y label/.style={at=(current axis.above origin),anchor=south},
+			  every axis x label/.style={at=(current axis.right of origin),anchor=west},
+			  height=5cm, width=20cm,
+			  xtick={4}, ytick=\empty,
+			  enlargelimits=false, clip=false, axis on top,
+			  grid = major
+			  ]
+			  \addplot [fill=cyan!20, draw=none, domain=0:2.4] {gauss(4,1)} \closedcycle;
+			  \addplot [fill=cyan!20, draw=none, domain=5.6:10] {gauss(4,1)} \closedcycle;
+			  \addplot [very thick,cyan!50!black] {gauss(4,1)};
+			 
+
+
+			\draw [yshift=-0.6cm, latex-latex](axis cs:4,0) -- node [fill=white] {$1.96\sigma$} (axis cs:5.6,0);
+			\end{axis}
+
+		\end{tikzpicture}
+
+		\subsection{Empirical Mean}
+		\(\gamma = \frac{\sum{x}}{N}\)
+
+		Properties (for independent random variables X and Y):
+		\begin{enumerate}
+			\item \(Mean(X + Y) = Mean(X) + Mean(Y)\)
+			\item \(Mean(X \times Y) = Mean(X) \times Mean(Y)\)
+		\end{enumerate}
+
+		\subsection{Variance}
+		\(\sigma^2 = Var(X)\newline
+			\sigma^2 = \frac{\sum{(x_i - \gamma)^2}}{N}\newline
+			\sigma^2 = \frac{\sum{X_i^2}}{N} - \frac{(\sum{X_i})^2}{N^2}\newline
+			\sigma^2 = \frac{\sum{(x_i - \gamma)^2}}{N}\)\newline
+		\subsection{Standard Deviation}
+		\(\sigma = \sqrt{Var(X)}\newline
+			\sigma = \sqrt{\frac{\sum{(X\_i - \gamma)^2}}{N}}\)\newline
+
+		\subsection{Standard Normal Distribution}
+		\(\frac{1}{\sqrt{2 \cdot \pi \cdot \sigma^2}} \cdot e^{[-\frac{1}{2} \cdot \frac{(x-\gamma)^2}{\sigma^2}]}\)
+
+		\subsection{Confidence Interval}
+		\(CI = 1.96 \cdot \sqrt{\frac{p(1 - p)}{N}}\newline
+			General Form:\newline
+			Size of CI = a \cdot \sqrt{\frac{\sigma^2}{N}}\newline
+			\frac{\sum{X_i \pm a \cdot \sqrt{\frac{\sigma^2}{N}}}}{N}\)
+
+			\textbf{Note}
+
+			\begin{enumerate}
+			\item $a = 1.96 for N \geq 30$
+			\item $a$ is the t-value computed for $(N - 1)$ degrees of freedom and confidence level $p$.
+			\end{enumerate}
+
+		\begin{tabular}{lllll}
+			\hline
+			Name & Population Symbol & Sample Symbol & Sample Calculation & Beschreibung \\ \hline
+			Mean &  & $\bar{x}$ & $\bar{x} = \frac{\sum{x}}{N}$ & Durchschnitt aller Daten \\
+			Variance & $\sigma_x^2$ & $s_x^2$ & $s_x^2 = \frac{\sum{(x - \bar{x})^2}}{N - 1}$ & Abweichung \\
+			Standard Dev & $\sigma_x$ & $s_x$ & $s_x = \sqrt{s_x^2}$ &  \\
+			Covariance & $\sigma_xy$ & $s_xy$ & $s_xy = \frac{\sum{(x - \bar{x})(y - \bar{y})}}{N - 1}$ &  \\
+			Correlation & $\rho_xy$ & $r_xy$ & \begin{tabular}[c]{@{}l@{}}$r_xy = \frac{s_xy}{s_x s_y}$\\ $r_xy = \frac{\sum{(z_x z_y)}}{N - 1}$\end{tabular} &  \\ \hline
+			z-score & $z_x$ & $z_x$ & $z_x = \frac{x-\bar{x}}{s_x}; \bar{z} = 0; s_x^2 = 1$ &  \\ \hline
+		\end{tabular}
+
+	\subsection{T-Test}
+		\[
+		t = \frac{\bar{x_D} - 0}{s_D / \sqrt{n}}
+		\]
 
 \end{document}
