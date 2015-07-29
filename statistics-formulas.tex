@@ -2,15 +2,65 @@
 
 \usepackage{amsmath}
 \usepackage{booktabs}
-\usepackage[margin=0.5in]{geometry}
 \usepackage{pgfplots}
+\usepackage{hyperref}
 
 \title{Statistic Formulas}
-\author{Robin Bader}
+\author{RobinXSI}
 \date{Juli 2015}
 \begin{document}
    \maketitle
    	\section{Introduction}
+
+   		Wichtig beim aufstellen von Hypothesen ist, dass die Auswertung eine statistische Signifikanz haben.
+
+   		Statistical significance means:
+		\begin{itemize}
+			\item rected the null hypothesis
+			\item results are not likely due to chance (sampling error)
+		\end{itemize}
+
+		Als Endresultat der Statistik sollten folgendes Dokument erstellt werden können:
+		\begin{itemize}
+			\item Desciriptive Statistics
+				\begin{itemize}
+					\item M - Mean
+					\item Sd - Standard Deviation
+				\end{itemize}
+			\item Inferential Statistics
+				\begin{itemize}
+					\item Hypothesis Test \(\alpha\)
+					\begin{itemize}
+						\item kind of test, bsp: one-sample t-test
+						\item test statistic, bsp: t-value
+						\item df - degrees of freedom
+						\item p-value
+						\item direction of test, bsp: one-tail-test or two-tail-test
+					\end{itemize}
+					\item APA style
+						  \\\(t(df) = X.XX, p = X.XX,\) direction
+						  \\bsp: \(t(24) = -2.50, p < .05,\) one-tailed
+					\item Confidence intervals
+					\begin{itemize}
+						\item Confidence leve, bsp: 95\%
+						\item Lower Limit
+						\item Upper Limit
+						\item CI on what?
+					\end{itemize}
+					\item APA style - CIs
+						  \\Confidence interval on the mean difference;
+						  \\95\% CI = (4 to 6)
+					\item Effect size measures
+						\begin{itemize}
+							\item \(d\)
+							\item \(r^2\)
+						\end{itemize}
+					\item APA style - CIs
+						  \\\(d = X.XX\)
+						  \\\(r^2 = .XX\)
+
+				\end{itemize}
+		\end{itemize}
 
 
 	\section{Statistical Formulas}
@@ -24,7 +74,7 @@
 			  axis lines*=left, xlabel=$x$, ylabel=$y$,
 			  every axis y label/.style={at=(current axis.above origin),anchor=south},
 			  every axis x label/.style={at=(current axis.right of origin),anchor=west},
-			  height=5cm, width=20cm,
+			  height=5cm, width=15cm,
 			  xtick={4}, ytick=\empty,
 			  enlargelimits=false, clip=false, axis on top,
 			  grid = major
@@ -54,9 +104,16 @@
 			\sigma^2 = \frac{\sum{(x_i - \gamma)^2}}{N}\newline
 			\sigma^2 = \frac{\sum{X_i^2}}{N} - \frac{(\sum{X_i})^2}{N^2}\newline
 			\sigma^2 = \frac{\sum{(x_i - \gamma)^2}}{N}\)\newline
+		
 		\subsection{Standard Deviation}
 		\(\sigma = \sqrt{Var(X)}\newline
-			\sigma = \sqrt{\frac{\sum{(X\_i - \gamma)^2}}{N}}\)\newline
+			\sigma = \sqrt{\frac{\sum{(X_i - \gamma)^2}}{N}}\)\newline
+
+		\subsection{Standard Error}
+		\(Sd = \frac{\sigma}{N}\)
+
+		\subsection{Z-Score}
+		Z-Score \(= \frac{x - \bar{x}}{Sd}\)
 
 		\subsection{Standard Normal Distribution}
 		\(\frac{1}{\sqrt{2 \cdot \pi \cdot \sigma^2}} \cdot e^{[-\frac{1}{2} \cdot \frac{(x-\gamma)^2}{\sigma^2}]}\)
@@ -74,6 +131,7 @@
 			\item $a$ is the t-value computed for $(N - 1)$ degrees of freedom and confidence level $p$.
 			\end{enumerate}
 
+		\subsection{Additional Formulas}
 		\begin{tabular}{lllll}
 			\hline
 			Name & Population Symbol & Sample Symbol & Sample Calculation & Beschreibung \\ \hline
@@ -89,5 +147,55 @@
 		\[
 		t = \frac{\bar{x_D} - 0}{s_D / \sqrt{n}}
 		\]
+
+	\subsection{Hypothese}
+		``US families spent an average of \$151 per week on food''
+		\\Beispiel Null Hypothese: ``the program did not change the cost of food''
+		\\Beispiel Alternative Hypothese: ``the program reduced the cost of food''
+		\\
+		\\\(null \rightarrow H_0:\mu_program >= 151\)
+		\\\(alt \rightarrow H_A:\mu_program < 151\)
+
+
+	\section{10b: t-Test, Part 2}
+
+		Difference Measures
+		\begin{itemize}
+			\item meandifference
+			\item standardized differences
+			\item chohen's d
+		\end{itemize}	
+
+		Correlation measures
+		\begin{itemize}
+			\item \(r^2\) - proportion (\%) of variation in one variable that is related to (``explained by'') another variable.
+		\end{itemize}
+
+		\subsection{Cohen's d}
+			Standardized mean difference 
+			\\\(d = \frac{\bar{X} - \mu}{Sd}\)
+
+		\subsection{Correlation measures}
+			\(r^2 \Rightarrow\) bestimmt die Stärke des Zusammenhangs zwischen zwei Variablen als Proportion (\%)
+			\\Wert zwischen 0.00 und 1.00
+			\\\(r^2 = \frac{t^2}{t^2 + df}\)
+			\\\(df = \) degrees of freedom
+
+
+		\subsection{Important formulas}
+			\(\mu \Rightarrow\) Population Mean
+			\\\(n \Rightarrow\) Sample Size
+			\\\(\bar{X} \Rightarrow\) Sample Mean
+			\\\(s_D \Rightarrow\) Standard Deviation for sample
+			\\\(\alpha \Rightarrow\) tail probability on t-table
+			\\\(t_{critical} \Rightarrow\) from \href{https://s3.amazonaws.com/udacity-hosted-downloads/t-table.jpg}{t-table}
+			\\\(df = n - 1 \Rightarrow\) Degrees of Freedom
+			\\\(SEM = \frac{s_D}{\sqrt{n}} \Rightarrow\) Standard Error of the Mean
+			\\\(t = \frac{\bar{X} - \mu}{SEM} \Rightarrow\) One Sample t-Test
+			\\margin of error \(= (t^{critical} \times SEM)\)
+			\\\(CI = \bar{X} \pm \) margin of error
+			\\\(d = \frac{\bar{X}-\mu}{s_D} \Rightarrow\) Cohen's d
+			\\\(r^2 = \frac{t^2}{t^2 + df}\)
+	
 
 \end{document}
