@@ -148,54 +148,57 @@
 		t = \frac{\bar{x_D} - 0}{s_D / \sqrt{n}}
 		\]
 
-	\subsection{Hypothese}
-		``US families spent an average of \$151 per week on food''
-		\\Beispiel Null Hypothese: ``the program did not change the cost of food''
-		\\Beispiel Alternative Hypothese: ``the program reduced the cost of food''
-		\\
-		\\\(null \rightarrow H_0:\mu_program >= 151\)
-		\\\(alt \rightarrow H_A:\mu_program < 151\)
+	
 
 
-	\section{10b: t-Test, Part 2}
+	\section{Lesson 10 - Dependent samples}
 
-		Difference Measures
+		Dependent samples (repeated measures)
 		\begin{itemize}
-			\item meandifference
-			\item standardized differences
-			\item chohen's d
-		\end{itemize}	
-
-		Correlation measures
-		\begin{itemize}
-			\item \(r^2\) - proportion (\%) of variation in one variable that is related to (``explained by'') another variable.
+			\item Two Conditions
+			\item Longitudinal
+			\item Pre-Test, Post-Test
 		\end{itemize}
 
-		\subsection{Cohen's d}
-			Standardized mean difference 
-			\\\(d = \frac{\bar{X} - \mu}{Sd}\)
-
-		\subsection{Correlation measures}
-			\(r^2 \Rightarrow\) bestimmt die Stärke des Zusammenhangs zwischen zwei Variablen als Proportion (\%)
-			\\Wert zwischen 0.00 und 1.00
-			\\\(r^2 = \frac{t^2}{t^2 + df}\)
-			\\\(df = \) degrees of freedom
-
-
 		\subsection{Important formulas}
-			\(\mu \Rightarrow\) Population Mean
-			\\\(n \Rightarrow\) Sample Size
-			\\\(\bar{X} \Rightarrow\) Sample Mean
-			\\\(s_D \Rightarrow\) Standard Deviation for sample
+			\(x = [ARRAY of VALUES] \Rightarrow\) Population Data
+			\(X = [ARRAY of VALUES] \Rightarrow\) Sample Data
+			\\\(n \Rightarrow\) Sample und Population Size
+			\\\(\mu = \frac{\sum{x_i}}{n}\Rightarrow\) Population Mean
+			\\\(\bar{X} = \frac{\sum{X_i}}{n} \Rightarrow\) Sample Mean
+			\\\(s_D = \sqrt{\frac{\sum{(X_i - \mu)^2}}{n}} \Rightarrow\) Standard Deviation for sample
 			\\\(\alpha \Rightarrow\) tail probability on t-table
 			\\\(t_{critical} \Rightarrow\) from \href{https://s3.amazonaws.com/udacity-hosted-downloads/t-table.jpg}{t-table}
 			\\\(df = n - 1 \Rightarrow\) Degrees of Freedom
 			\\\(SEM = \frac{s_D}{\sqrt{n}} \Rightarrow\) Standard Error of the Mean
 			\\\(t = \frac{\bar{X} - \mu}{SEM} \Rightarrow\) One Sample t-Test
 			\\margin of error \(= (t^{critical} \times SEM)\)
-			\\\(CI = \bar{X} \pm \) margin of error
-			\\\(d = \frac{\bar{X}-\mu}{s_D} \Rightarrow\) Cohen's d
-			\\\(r^2 = \frac{t^2}{t^2 + df}\)
+			\\\(CI = \bar{X} \pm \) margin of error \(\Rightarrow\) Confidence Interval
+			\\\(d = \frac{\bar{X}-\mu}{s_D} \Rightarrow\) Cohen's d \(\Rightarrow\) Standardized mean difference 
+			\\\(r^2 = \frac{t^2}{t^2 + df} \Rightarrow\) bestimmt die Stärke des Zusammenhangs zwischen zwei Variablen als Proportion. Beispiel: \(r^2 gibt\) an wieviel das Geschlecht einer Person zum Unterschied der beiden Samples beigetragen hat
+
+		\subsection{Hypothese}
+			``US families spent an average of \$151 per week on food''
+			\\Beispiel Null Hypothese: ``the program did not change the cost of food''
+			\\Beispiel Alternative Hypothese: ``the program reduced the cost of food''
+			\\
+			\\\(null \rightarrow H_0:\mu_program >= 151\)
+			\\\(alt \rightarrow H_A:\mu_program < 151\)
+
+	\section{Lesson 11 - Independent Samples}
+		Voneinander abhängige Daten brauchen nicht so viele Testkandidaten, ist kosteneffektiv und weniger zeitaufwendig. Diese Art an Daten zu kommen hat aber auch Nachteile. Beispielsweise könnten die Probanden beim zweiten Ausfüllen eines Tests die Antworten schon kennen.
+
+		Aus diesem Grund braucht es Independent Samples, also je einen Teil des Samples, der das Treatment gemacht hat und einen anderen Teil der es nicht gemacht hat.
+		\\\(s_1 \sqrt{\frac{\sum{(X_i1 - \mu)^2}}{n - 1}} \Rightarrow\) Standard Deviation for sample with
+		 \href{Bessel\'s correction}{http://www.wikiwand.com/en/Bessel\%27s\_correction}
+		\\\(s_2 \sqrt{\frac{\sum{(X_i2 - \mu)^2}}{n - 1}} \Rightarrow\) Standard Deviation for sample with \href{Bessel\'s correction}{http://www.wikiwand.com/en/Bessel\%27s\_correction}
+		\\\(n_1 \Rightarrow\) Size of Sample 1
+		\\\(n_2 \Rightarrow\) Size of Sample 2
+		\\\(S_D = \sqrt{s_1^2 + s_2^2}\) Standard Deviation for Samples
+		\\\(SEM = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}} \Rightarrow\) Standard Error for independent samples
+		\\\(df = n_1 + n_2 - 2 \Rightarrow\) Degrees of freedom for independent samples
+		\\\(t = \frac{\bar{X}_1 - \bar{X}_2}{SEM} \Rightarrow\) Two Sample t-Test
+		\\\(CI = (\bar{X}_1 - \bar{X}_2) \pm \) margin of error \(\Rightarrow\) Confidence Interval
 	
 
 \end{document}
