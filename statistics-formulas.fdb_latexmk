@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1438284327 "/Users/robin/Development/statistics-formulas/statistics-formulas.tex" "/Users/robin/Development/statistics-formulas/statistics-formulas.pdf" "statistics-formulas" 1438284329
-  "/Users/robin/Development/statistics-formulas/statistics-formulas.aux" 1438284329 2119 daa50efba0da9dfd6afa8f8a74a3ad8f ""
-  "/Users/robin/Development/statistics-formulas/statistics-formulas.tex" 1438284324 8032 56b2bc1a11664865b7ca89752bb77e70 ""
+["pdflatex"] 1438525389 "/Users/robin/Development/statistics-formulas/statistics-formulas.tex" "/Users/robin/Development/statistics-formulas/statistics-formulas.pdf" "statistics-formulas" 1438525391
+  "/Users/robin/Development/statistics-formulas/statistics-formulas.aux" 1438525391 2232 0d3a288f53592f65a61e0f7490f4eb17 ""
+  "/Users/robin/Development/statistics-formulas/statistics-formulas.tex" 1438525386 9107 467e8e03f0919c0d27e973974afd6ded ""
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -173,13 +173,13 @@
   "/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1401025944 1445653 26a0aacf3d70032b1ec192e8c7792117 ""
   "/usr/local/texlive/2014/texmf-var/web2c/pdftex/pdflatex.fmt" 1431083700 3832011 5f4b2d08b2bb877f740afc3ef1e224a7 ""
   "/usr/local/texlive/2014/texmf.cnf" 1401025936 577 a59edbde8d3a8c549d0eeaab1739e2ff ""
-  "statistics-formulas.aux" 1438284329 2119 daa50efba0da9dfd6afa8f8a74a3ad8f ""
-  "statistics-formulas.out" 1438284329 937 78ec6f36cbe558282d3a5a022d6dbe66 ""
-  "statistics-formulas.tex" 1438284324 8032 56b2bc1a11664865b7ca89752bb77e70 ""
+  "statistics-formulas.aux" 1438525391 2232 0d3a288f53592f65a61e0f7490f4eb17 ""
+  "statistics-formulas.out" 1438525391 1015 f01fc423bf99bd1dda75315c0cc5db77 ""
+  "statistics-formulas.tex" 1438525386 9107 467e8e03f0919c0d27e973974afd6ded ""
   (generated)
-  "/Users/robin/Development/statistics-formulas/statistics-formulas.pdf"
   "statistics-formulas.aux"
-  "/Users/robin/Development/statistics-formulas/statistics-formulas.log"
-  "statistics-formulas.log"
   "statistics-formulas.out"
+  "statistics-formulas.log"
   "statistics-formulas.pdf"
+  "/Users/robin/Development/statistics-formulas/statistics-formulas.log"
+  "/Users/robin/Development/statistics-formulas/statistics-formulas.pdf"

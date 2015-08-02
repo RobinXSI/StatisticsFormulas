@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{booktabs}
 \usepackage{pgfplots}
+\pgfplotsset{compat=newest}
 \usepackage{hyperref}
 
 \title{Statistic Formulas}
@@ -199,6 +200,22 @@
 		\\\(df = n_1 + n_2 - 2 \Rightarrow\) Degrees of freedom for independent samples
 		\\\(t = \frac{\bar{X}_1 - \bar{X}_2}{SEM} \Rightarrow\) Two Sample t-Test
 		\\\(CI = (\bar{X}_1 - \bar{X}_2) \pm \) margin of error \(\Rightarrow\) Confidence Interval
+		\\\(SS_x = \sum{(x_i - \bar{x})^2} \Rightarrow\) Sum of Squared Deviations
+		\\\(S_p^2 = \frac{SS_1 + SS_2}{df_1 + df_2} \Rightarrow\) Pooled variance
+		\\\(SEM_{CORRECTED} (S_{\bar{x_1} - \bar{x_2}}) = \sqrt{\frac{s_p^2}{n_1} + \frac{s_p^2}{n_2}} \Rightarrow\) Corrected Standard Error
+		\\\(t_{CORRECTED} = \frac{\bar{x_1} - \bar{x_2}}{S_{\bar{x_1}-\bar{x_2}}} \Rightarrow\) t-Statistic Corrected
+
+	\section{Lesson 12 - ANOVA (Analysis of Variance)}
+		ANOVA for samples with the same size
+		\\\(N \Rightarrow\) number of values from all samples
+		\\\(k \Rightarrow\) number of samples
+		\\\(\bar{x}_G = \frac{\sum{\bar{x}_i}}{N}\Rightarrow\) Grand Mean
+		\\\(df = N - k \Rightarrow\) degrees of freedom
+		\\\(df_1 = k - 1)\)
+		\\\(df_2 = N - k)\)
+		\\\(df_{total} = N - 1 \Rightarrow\) total degrees of freedom
+		\\\(F = \frac{n * \sum{(\bar{x}_K - \bar{x}_G)^2 / df_1}}{\sum{(x_i - \bar{x}_k)^2 / df_2}} \Rightarrow\) between-group variability / within-group variability. \href{http://www.socr.ucla.edu/applets.dir/f\_table.html}{F-Table}
+		
 	
 
 \end{document}
